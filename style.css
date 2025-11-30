@@ -1,0 +1,348 @@
+/* Variables for Colors */
+:root {
+    --bg-color: #0f172a; /* Dark Blue Background */
+    --card-bg: #1e293b;
+    --text-color: #e2e8f0;
+    --accent-color: #38bdf8; /* Light Blue Accent */
+    --hover-color: #0ea5e9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: rgba(15, 23, 42, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+img:hover{
+    transform: scale(1.1);
+    transition: 1s;
+    
+}
+
+.nav-links { display: flex; gap: 30px; }
+.nav-links a { font-weight: 500; transition: 0.3s; }
+.nav-links a:hover { color: var(--accent-color); }
+.hamburger { display: none; cursor: pointer; font-size: 1.8rem; }
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 10%;
+    min-height: 90vh;
+}
+
+.hero-content h3 { font-size: 1.5rem; color: var(--accent-color); }
+.hero-content h1 { font-size: 3.5rem; margin: 10px 0; }
+.hero-content p { font-size: 1.2rem; color: #94a3b8; margin-bottom: 20px; }
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #0f172a;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+.btn:hover { background-color: var(--hover-color); transform: translateY(-3px); }
+
+.social-icons a {
+    margin-right: 15px;
+    font-size: 1.5rem;
+    color: #94a3b8;
+    transition: 0.2s;
+}
+.social-icons a:hover { color: var(--accent-color); }
+
+.hero-img img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+}
+
+/* Sections General */
+.section { padding: 80px 10%; }
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--accent-color);
+}
+
+/* Timeline (Education) */
+.timeline {
+    border-left: 2px solid var(--accent-color);
+    margin-left: 20px;
+    padding-left: 30px;
+}
+.timeline-item {
+    margin-bottom: 40px;
+    position: relative;
+}
+.circle {
+    width: 16px;
+    height: 16px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    position: absolute;
+    left: -39px;
+    top: 5px;
+}
+.institution { color: #94a3b8; font-style: italic; }
+
+/* Skills Grid */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.skill-card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+.skill-card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
+.skill-card i { font-size: 3rem; margin-bottom: 10px; }
+.progress-bar {
+    background-color: #334155;
+    height: 8px;
+    border-radius: 4px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.progress { height: 100%; background-color: var(--accent-color); }
+
+/* Certifications Grid */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+.card:hover { transform: translateY(-10px); background-color: #253146; }
+.card-icon { font-size: 2rem; color: var(--accent-color); margin-bottom: 15px; }
+.card-desc { font-size: 0.9rem; color: #94a3b8; margin: 15px 0; }
+.small-btn { font-size: 0.9rem; color: var(--accent-color); font-weight: 600; }
+
+/* Contact Form */
+.contact-container { max-width: 600px; margin: 0 auto; text-align: center; }
+form input, form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: var(--card-bg);
+    border: 1px solid #334155;
+    color: white;
+    border-radius: 5px;
+}
+form button { width: 100%; cursor: pointer; }
+footer { text-align: center; margin-top: 50px; color: #64748b; }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hamburger { display: block; }
+    .nav-links {
+        position: absolute;
+        right: 0;
+        top: 70px;
+        background-color: var(--card-bg);
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        display: none;
+    }
+    .nav-links.active { display: flex; }
+    .hero { flex-direction: column-reverse; text-align: center; justify-content: center; }
+    .hero-img img { width: 250px; height: 250px; margin-bottom: 30px; }
+}
+
+
+
+/* =========================================
+   TABLET VIEW (Max-width: 1024px)
+   ========================================= */
+@media screen and (max-width: 1024px) {
+    
+    /* Side padding kam karo */
+    .section, .navbar, .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    /* Heading thodi chhoti karo */
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* =========================================
+   MOBILE VIEW (Max-width: 768px)
+   ========================================= */
+@media screen and (max-width: 768px) {
+
+    /* 1. Navbar & Menu */
+    .hamburger {
+        display: block;
+        z-index: 101; /* Menu ke upar dikhe */
+    }
+
+    .nav-links {
+        position: fixed; /* Absolute ki jagah Fixed behtar hai mobile menu ke liye */
+        top: 0;
+        right: -100%; /* Screen se bahar */
+        height: 100vh;
+        width: 70%;
+        background-color: var(--card-bg);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    }
+
+    .nav-links.active {
+        right: 0; /* Slide in effect */
+    }
+    
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    /* 2. Hero Section */
+    .hero {
+        flex-direction: column-reverse; /* Image upar, Text neeche */
+        text-align: center;
+        padding-top: 100px; /* Navbar ke liye jagah */
+        justify-content: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .social-icons {
+        margin-bottom: 20px;
+    }
+
+    /* Image chhoti karo mobile pe */
+    .hero-img img {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 30px;
+    }
+
+    /* 3. Education Timeline */
+    .timeline {
+        margin-left: 10px;
+        padding-left: 20px;
+    }
+    
+    .circle {
+        width: 12px;
+        height: 12px;
+        left: -27px; /* Circle ko line pe adjust karo */
+    }
+
+
+    .skills-container, .cert-grid {
+        gap: 15px;
+    }
+
+    .skill-card h3 {
+        font-size: 1rem;
+    }
+
+    /* 5. Contact Form */
+    .contact-container {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE (Old Phones - Max 480px)
+   ========================================= */
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-img img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Navbar Active Link Style */
+.nav-links a.active-link {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* for Js 
+
+/* Active Link Style (JS ke liye) */
+.nav-links a.active-link {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 2px;
+}
