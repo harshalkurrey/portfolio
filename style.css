@@ -396,3 +396,16 @@ body.light-mode .navbar {
     background-color: rgba(255, 255, 255, 0.9);
     border-bottom: 1px solid rgba(0,0,0,0.1);
 }
+
+/* Magic Canvas Styling */
+#particle-canvas {
+    position: fixed; /* Scroll karne par bhi wahi rahega */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Sab content ke peeche chala jayega */
+    pointer-events: none; /* Taki buttons click karne mein dikkat na ho */
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); /* Dark space look */
+}
+
