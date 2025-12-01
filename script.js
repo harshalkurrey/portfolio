@@ -58,6 +58,9 @@ var typed = new Typed(".auto-type", {
 /* =========================================
    Dark/Light Theme Toggle
    ========================================= */
+/* =========================================
+   Dark/Light Theme Toggle
+   ========================================= */
 const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = themeToggle.querySelector('i');
 const body = document.body;
@@ -72,4 +75,5 @@ themeToggle.addEventListener('click', () => {
         themeIcon.classList.replace('fa-moon', 'fa-sun');
     }
 });
+
 
