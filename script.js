@@ -1,3 +1,50 @@
+/* =========================================
+   Welcome Gate Logic (Security Check)
+   ========================================= */
+document.addEventListener("DOMContentLoaded", () => {
+    const gate = document.getElementById('welcome-gate');
+    const gateForm = document.getElementById('gate-form');
+    
+    // Check karo: Kya user pehle aa chuka hai?
+    const userEmail = localStorage.getItem('portfolio_visitor_email');
+    const userName = localStorage.getItem('portfolio_visitor_name');
+
+    if (userEmail && userName) {
+        // Agar data hai, toh gate hata do
+        gate.style.display = 'none';
+        
+        // Optional: Console mein hello bolo
+        console.log(`Welcome back, ${userName}!`);
+    } else {
+        // Agar naya banda hai, toh body scroll band kar do
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Jab user form submit kare
+    gateForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // Page reload mat hone do
+
+        const nameInput = document.getElementById('visitor-name').value;
+        const emailInput = document.getElementById('visitor-email').value;
+
+        // Data browser ki memory mein save karo
+        localStorage.setItem('portfolio_visitor_name', nameInput);
+        localStorage.setItem('portfolio_visitor_email', emailInput);
+
+        // Gate khol do (Animation ke sath gayab)
+        gate.style.transition = "opacity 0.5s ease";
+        gate.style.opacity = "0";
+        
+        setTimeout(() => {
+            gate.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Scroll wapas chalu
+            
+            // Optional: User ko personalize welcome karo (Alert ya Text)
+            alert(`Access Granted! Welcome, ${nameInput}.`);
+        }, 500);
+    });
+});
+
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const navItems = document.querySelectorAll('.nav-links a');
@@ -75,5 +122,6 @@ themeToggle.addEventListener('click', () => {
         themeIcon.classList.replace('fa-moon', 'fa-sun');
     }
 });
+
 
 
