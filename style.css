@@ -345,4 +345,29 @@ footer { text-align: center; margin-top: 50px; color: #64748b; }
     color: var(--accent-color);
     border-bottom: 2px solid var(--accent-color);
     padding-bottom: 2px;
+
+}
+
+/* =========================================
+   LIGHT MODE COLORS
+   ========================================= */
+body.light-mode {
+    --bg-color: #ffffff;      /* White Background */
+    --card-bg: #f1f5f9;       /* Light Grey Cards */
+    --text-color: #1e293b;    /* Dark Text */
+    --accent-color: #0284c7;  /* Dark Blue Accent */
+    --hover-color: #0ea5e9;
+}
+
+/* Light mode mein text thoda dark chahiye */
+body.light-mode .institution, 
+body.light-mode .card-desc,
+body.light-mode p {
+    color: #475569;
+}
+
+/* Navbar background for light mode */
+body.light-mode .navbar {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
