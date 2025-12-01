@@ -54,3 +54,22 @@ var typed = new Typed(".auto-type", {
     backSpeed: 100,   // Mitane ki speed
     loop: true        // Baar baar chalega
 });
+
+/* =========================================
+   Dark/Light Theme Toggle
+   ========================================= */
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = themeToggle.querySelector('i');
+const body = document.body;
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('light-mode');
+
+    // Icon change karo (Sun <-> Moon)
+    if (body.classList.contains('light-mode')) {
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+    } else {
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+});
+
