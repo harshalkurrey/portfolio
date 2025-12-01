@@ -42,4 +42,15 @@ window.addEventListener('scroll', () => {
             link.classList.add('active-link');
         }
     });
+
+});
+
+/* =========================================
+   Typewriter Effect
+   ========================================= */
+var typed = new Typed(".auto-type", {
+    strings: ["Computer Science Student", "Web Developer", "Tech Enthusiast", "Learner"],
+    typeSpeed: 100,   // Likhne ki speed
+    backSpeed: 100,   // Mitane ki speed
+    loop: true        // Baar baar chalega
 });
