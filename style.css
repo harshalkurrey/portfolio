@@ -24,6 +24,21 @@ body {
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
+h2{
+    background-image: url(A_hyperrealistic_closeup_202512061504.jpeg);
+    background-size: cover;
+    background-clip: text;
+    color: transparent;
+    animation: animate 20s linear infinite;
+    font-size: 50px;
+}
+
+@keyframes animate {
+    to {
+        background-position-x: -500px;
+    }
+}
+
 /* Navbar */
 .navbar {
     display: flex;
@@ -468,6 +483,7 @@ body.light-mode .navbar {
     background: #0ea5e9;
     box-shadow: 0 0 15px #0ea5e9;
 }
+
 
 
 
