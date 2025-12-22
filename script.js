@@ -124,4 +124,11 @@ themeToggle.addEventListener('click', () => {
 });
 
 
-
+/* =========================================
+   Initialize AOS (Scroll Animation)
+   ========================================= */
+AOS.init({
+    duration: 600, // Speed of animation
+    once: false, 
+    mirror: true    // Animation sirf ek baar chalega
+});
