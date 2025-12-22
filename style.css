@@ -180,6 +180,7 @@ img:hover{
     transition: 0.3s;
     position: relative;
     overflow: hidden;
+    margin-bottom: 25px;
 }
 .card:hover { transform: translateY(-10px); background-color: #253146; }
 .card-icon { font-size: 2rem; color: var(--accent-color); margin-bottom: 15px; }
@@ -483,6 +484,7 @@ body.light-mode .navbar {
     background: #0ea5e9;
     box-shadow: 0 0 15px #0ea5e9;
 }
+
 
 
 
