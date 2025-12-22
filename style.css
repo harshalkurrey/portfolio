@@ -141,6 +141,92 @@ img:hover{
     top: 5px;
 }
 .institution { color: #94a3b8; font-style: italic; }
+/* -------------------------------------------
+   Skills Section - Bada aur Barabar Design
+------------------------------------------- */
+
+/* Section ke beech mein gap */
+.skill-category {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* Heading ka design (Jaise Frontend, Tools) */
+.category-title {
+    font-size: 1.8rem;
+    color: var(--accent-color); /* Tera Blue Color */
+    margin-bottom: 30px;
+    display: inline-block;
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 10px;
+}
+
+/* Grid ko ek dum seedha aur center mein rakhna */
+.skills-grid {
+    display: flex;
+    justify-content: center; /* Center mein */
+    align-items: stretch;    /* Sabki height barabar */
+    gap: 30px;               /* Beech mein space */
+    flex-wrap: wrap;         /* Mobile ke liye */
+    width: 100%;
+    max-width: 1000px;       /* Zyada failne se rokna */
+    margin: 0 auto;          /* Page ke center mein */
+}
+
+/* Card ka Naya Bada aur Barabar Design */
+.skill-card {
+    /* Background aur Border */
+    background: rgba(255, 255, 255, 0.05); /* Halka transparent background */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    
+    /* Size aur Spacing */
+    padding: 25px;           /* Andar jagah badha di */
+    width: 220px;            /* FIX SIZE: Sab barabar aur bade */
+    
+    /* Text aur Icon ko Center karna */
+    display: flex;
+    flex-direction: column;  /* Icon upar, Text neeche */
+    align-items: center;     /* Center mein */
+    justify-content: center;
+    
+    /* Animation */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Thoda utha hua look */
+}
+
+/* Card par mouse le jane par effect */
+.skill-card:hover {
+    transform: translateY(-10px); /* Thoda upar uthega */
+    border-color: var(--accent-color); /* Border neela ho jayega */
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4); /* Glow karega */
+}
+
+/* Icon ka size badhana */
+.skill-card i {
+    font-size: 4rem; /* Icon bahut bada kar diya */
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.3)); /* Icon ka glow */
+}
+
+/* Text ka Naya Background aur Center Design */
+.skill-card p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+    
+    /* Text ka Background */
+    background: var(--accent-color); /* Blue background */
+    padding: 8px 20px;
+    border-radius: 20px; /* Pill shape */
+    box-shadow: 0 2px 10px rgba(56, 189, 248, 0.3);
+    
+    /* Text ko center rakhna */
+    text-align: center;
+    width: auto; /* Text ke hisab se chaudai */
+    min-width: 120px;
+}
+
 
 /* Skills Grid */
 .skills-container {
@@ -484,6 +570,7 @@ body.light-mode .navbar {
     background: #0ea5e9;
     box-shadow: 0 0 15px #0ea5e9;
 }
+
 
 
 
