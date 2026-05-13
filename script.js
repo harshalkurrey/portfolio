@@ -2,6 +2,7 @@
 window.addEventListener('load', () => {
     const loadingScreen = document.getElementById('loadingScreen');
     const loadingPercent = document.getElementById('loadingPercent');
+    if (!loadingScreen || !loadingPercent) return;
     let currentPercent = 0;
     
     const percentInterval = setInterval(() => {
@@ -21,65 +22,69 @@ window.addEventListener('load', () => {
 
 // ── PARTICLES
 const canvas = document.getElementById('particles');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+if (canvas) {
+    const ctx = canvas.getContext('2d');
+    if (ctx) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
 
-const particles = [];
-const PARTICLE_COUNT = 80;
+        const particles = [];
+        const PARTICLE_COUNT = 80;
 
-for (let i = 0; i < PARTICLE_COUNT; i++) {
-    particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        radius: Math.random() * 1.5 + 0.3,
-        alpha: Math.random() * 0.4 + 0.1,
-        color: Math.random() > 0.7 ? '#ff006e' : '#00f5ff'
-    });
-}
-
-function drawParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = p.color;
-        ctx.globalAlpha = p.alpha;
-        ctx.fill();
-        ctx.globalAlpha = 1;
-    });
-
-    // Draw connections
-    for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 120) {
-                ctx.beginPath();
-                ctx.moveTo(particles[i].x, particles[i].y);
-                ctx.lineTo(particles[j].x, particles[j].y);
-                ctx.strokeStyle = '#00f5ff';
-                ctx.globalAlpha = (1 - dist / 120) * 0.08;
-                ctx.lineWidth = 0.5;
-                ctx.stroke();
-                ctx.globalAlpha = 1;
-            }
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: (Math.random() - 0.5) * 0.4,
+                radius: Math.random() * 1.5 + 0.3,
+                alpha: Math.random() * 0.4 + 0.1,
+                color: Math.random() > 0.7 ? '#ff006e' : '#00f5ff'
+            });
         }
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.x += p.vx; p.y += p.vy;
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = p.color;
+                ctx.globalAlpha = p.alpha;
+                ctx.fill();
+                ctx.globalAlpha = 1;
+            });
+
+            // Draw connections
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = '#00f5ff';
+                        ctx.globalAlpha = (1 - dist / 120) * 0.08;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                        ctx.globalAlpha = 1;
+                    }
+                }
+            }
+            requestAnimationFrame(drawParticles);
+        }
+        drawParticles();
     }
-    requestAnimationFrame(drawParticles);
 }
-drawParticles();
 
 // ── TYPEWRITER
 const roles = [
@@ -93,6 +98,7 @@ let roleIdx = 0, charIdx = 0, deleting = false;
 const tw = document.getElementById('typewriter');
 
 function typewrite() {
+    if (!tw) return;
     const role = roles[roleIdx];
     if (!deleting) {
         tw.textContent = '> ' + role.slice(0, charIdx + 1) + '_';
@@ -117,18 +123,23 @@ typewrite();
 // ── SCROLL PROGRESS
 const prog = document.getElementById('scrollProgress');
 window.addEventListener('scroll', () => {
+    if (!prog) return;
     const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
     prog.style.width = scrolled + '%';
 });
 
 // ── REVEAL ON SCROLL
 const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-}, { threshold: 0.1 });
-reveals.forEach(el => observer.observe(el));
+if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+} else {
+    reveals.forEach(el => el.classList.add('visible'));
+}
 
 // ── SKILL BARS
 const barObserver = new IntersectionObserver((entries) => {
