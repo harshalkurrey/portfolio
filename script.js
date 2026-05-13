@@ -19,29 +19,6 @@ window.addEventListener('load', () => {
     }, 2200);
 });
 
-// ── CUSTOM CURSOR
-const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursorRing');
-let mx = 0, my = 0, rx = 0, ry = 0;
-
-document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    cursor.style.left = mx - 6 + 'px';
-    cursor.style.top = my - 6 + 'px';
-});
-
-function animateRing() {
-    rx += (mx - rx - 20) * 0.12;
-    ry += (my - ry - 20) * 0.12;
-    ring.style.left = rx + 'px';
-    ring.style.top = ry + 'px';
-    requestAnimationFrame(animateRing);
-}
-animateRing();
-
-document.addEventListener('mousedown', () => { cursor.classList.add('clicked'); ring.classList.add('clicked'); });
-document.addEventListener('mouseup', () => { cursor.classList.remove('clicked'); ring.classList.remove('clicked'); });
-
 // ── PARTICLES
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
