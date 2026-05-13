@@ -182,7 +182,7 @@ if ('IntersectionObserver' in window) {
 } else {
     counters.forEach(el => {
         const target = parseInt(el.dataset.target);
-        el.textContent = (Number.isFinite(target) ? target : 0) + '+';
+        el.textContent = (!Number.isNaN(target) ? target : 0) + '+';
     });
 }
 
