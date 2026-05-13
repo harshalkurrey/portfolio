@@ -142,36 +142,49 @@ if ('IntersectionObserver' in window) {
 }
 
 // ── SKILL BARS
-const barObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
-                bar.style.width = bar.dataset.width + '%';
-            });
-        }
+if ('IntersectionObserver' in window) {
+    const barObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+                    bar.style.width = bar.dataset.width + '%';
+                });
+            }
+        });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.skill-category').forEach(el => barObserver.observe(el));
+} else {
+    document.querySelectorAll('.skill-bar-fill').forEach(bar => {
+        bar.style.width = bar.dataset.width + '%';
     });
-}, { threshold: 0.3 });
-document.querySelectorAll('.skill-category').forEach(el => barObserver.observe(el));
+}
 
 // ── COUNTER ANIMATION
 const counters = document.querySelectorAll('[data-target]');
-const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const el = entry.target;
-            const target = parseInt(el.dataset.target);
-            let count = 0;
-            const step = target / 50;
-            const timer = setInterval(() => {
-                count += step;
-                if (count >= target) { count = target; clearInterval(timer); }
-                el.textContent = Math.floor(count) + '+';
-            }, 30);
-            counterObserver.unobserve(el);
-        }
+if ('IntersectionObserver' in window) {
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.dataset.target);
+                let count = 0;
+                const step = target / 50;
+                const timer = setInterval(() => {
+                    count += step;
+                    if (count >= target) { count = target; clearInterval(timer); }
+                    el.textContent = Math.floor(count) + '+';
+                }, 30);
+                counterObserver.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+    counters.forEach(el => counterObserver.observe(el));
+} else {
+    counters.forEach(el => {
+        const target = parseInt(el.dataset.target);
+        el.textContent = (Number.isFinite(target) ? target : 0) + '+';
     });
-}, { threshold: 0.5 });
-counters.forEach(el => counterObserver.observe(el));
+}
 
 // ── PROJECT LINKS - ENSURE THEY OPEN
 const projLinks = document.querySelectorAll('.proj-link');
