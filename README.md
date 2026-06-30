@@ -1,6 +1,6 @@
-# 🌐 Harshal Kurrey — Personal Portfolio
+# 🌐 harshal.kurrey — Personal Portfolio
 
-> A clean, responsive personal portfolio website showcasing my projects, skills, and experience as an AI/ML developer.
+> A clean, responsive personal portfolio website showcasing my projects, skills, and experience.
 
 [
 
@@ -73,10 +73,10 @@ portfolio/
 ## 👨‍💻 Author
 
 **Harshal Kurrey**
-- 🎓 B.Tech CSE (AI/ML) — Rungta International Institute of Technology, Bhilai
+- 🎓 B.Tech CSE  — Rungta International Institute of Technology, Bhilai
 - 💻 GitHub: [@harshalkurrey](https://github.com/harshalkurrey)
 - 📸 Instagram: [@harshal.kurrey](https://instagram.com/harshal.kurrey)
 
 ---
 
-> *Built with ❤️ by Harshal Kurrey*
+> *Built with ❤️ by Harshal*
