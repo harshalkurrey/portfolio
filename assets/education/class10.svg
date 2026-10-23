@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <defs>
+    <linearGradient id="c10-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#451a03"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#18181b"/>
+    </linearGradient>
+    <linearGradient id="c10-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ea580c" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="c10-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Container Squircle -->
+  <rect x="2" y="2" width="92" height="92" rx="20" fill="url(#c10-bg)" stroke="url(#c10-border)" stroke-width="2"/>
+
+  <!-- Academic Crest Shield -->
+  <path d="M48 20 C62 20 68 24 68 36 C68 52 48 64 48 64 C48 64 28 52 28 36 C28 24 34 20 48 20 Z" fill="#271c10" stroke="url(#c10-gold)" stroke-width="2.5"/>
+
+  <!-- Star of Academic Merit -->
+  <polygon points="48,26 51.5,35 61,35 53.5,41 56,50 48,44 40,50 42.5,41 35,35 44.5,35" fill="url(#c10-gold)"/>
+
+  <!-- Laurel Wreath Branch Accents -->
+  <path d="M22 52 C20 44 22 36 26 30" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="22" cy="48" r="1.5" fill="#fde047"/>
+  <circle cx="21" cy="40" r="1.5" fill="#fde047"/>
+  <circle cx="24" cy="33" r="1.5" fill="#fde047"/>
+
+  <path d="M74 52 C76 44 74 36 70 30" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="74" cy="48" r="1.5" fill="#fde047"/>
+  <circle cx="75" cy="40" r="1.5" fill="#fde047"/>
+  <circle cx="72" cy="33" r="1.5" fill="#fde047"/>
+
+  <!-- Class X Pill -->
+  <rect x="27" y="70" width="42" height="15" rx="7.5" fill="rgba(245, 158, 11, 0.18)" stroke="rgba(245, 158, 11, 0.4)" stroke-width="1"/>
+  <text x="48" y="81" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#fde68a" text-anchor="middle" letter-spacing="1">CLASS X</text>
+</svg>

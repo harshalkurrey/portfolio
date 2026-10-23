@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <defs>
+    <linearGradient id="dca-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2e1065"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="dca-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="dca-screen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="dca-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Container Squircle -->
+  <rect x="2" y="2" width="92" height="92" rx="20" fill="url(#dca-bg)" stroke="url(#dca-border)" stroke-width="2"/>
+
+  <!-- Computer Monitor Frame -->
+  <rect x="20" y="20" width="56" height="38" rx="6" fill="#1e1b4b" stroke="url(#dca-screen)" stroke-width="2"/>
+  
+  <!-- Monitor Header & Screen Content -->
+  <line x1="20" y1="28" x2="76" y2="28" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1.5"/>
+  <circle cx="26" cy="24" r="1.8" fill="#f43f5e"/>
+  <circle cx="31" cy="24" r="1.8" fill="#f59e0b"/>
+  <circle cx="36" cy="24" r="1.8" fill="#10b981"/>
+
+  <!-- Code Bracket on Screen -->
+  <path d="M34 37 L29 42 L34 47 M46 37 L51 42 L46 47 M42 35 L38 49" fill="none" stroke="#e0e7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Monitor Stand -->
+  <path d="M44 58 L44 64 M36 64 L60 64" stroke="url(#dca-screen)" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Golden Diploma Seal in Corner -->
+  <circle cx="70" cy="22" r="10" fill="url(#dca-gold)" stroke="#ca8a04" stroke-width="1.5"/>
+  <circle cx="70" cy="22" r="7" fill="none" stroke="#78350f" stroke-width="1" stroke-dasharray="2 1.5"/>
+  <!-- Ribbon Tails -->
+  <path d="M66 31 L64 40 L70 37 L76 40 L74 31 Z" fill="url(#dca-gold)"/>
+
+  <!-- DCA Badge Pill -->
+  <rect x="30" y="70" width="36" height="15" rx="7.5" fill="rgba(168, 85, 247, 0.2)" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1"/>
+  <text x="48" y="81" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#e9d5ff" text-anchor="middle" letter-spacing="1.5">DCA</text>
+</svg>

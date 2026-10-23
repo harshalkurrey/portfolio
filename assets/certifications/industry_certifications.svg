@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <defs>
+    <linearGradient id="cert-head-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2e1065"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="cert-head-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="cert-head-ribbon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="cert-head-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+    <linearGradient id="cert-head-inner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Container Squircle -->
+  <rect x="2" y="2" width="92" height="92" rx="20" fill="url(#cert-head-bg)" stroke="url(#cert-head-border)" stroke-width="2"/>
+
+  <!-- Subtle Ambient Glow -->
+  <circle cx="48" cy="40" r="26" fill="#a855f7" opacity="0.18"/>
+
+  <!-- Ribbon Tails hanging down -->
+  <path d="M38 52 L30 76 L40 70 L48 76 L44 52 Z" fill="url(#cert-head-ribbon)" opacity="0.9"/>
+  <path d="M52 52 L48 76 L56 70 L66 76 L58 52 Z" fill="url(#cert-head-ribbon)"/>
+
+  <!-- Outer Starburst Rosette / Medal Ring -->
+  <circle cx="48" cy="40" r="24" fill="url(#cert-head-ribbon)"/>
+  <!-- Scalloped Cog / Ribbon Fluting -->
+  <circle cx="48" cy="40" r="21" fill="none" stroke="url(#cert-head-gold)" stroke-width="2" stroke-dasharray="3 2"/>
+
+  <!-- Inner Dark Core Shield -->
+  <circle cx="48" cy="40" r="18" fill="url(#cert-head-inner)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5"/>
+
+  <!-- Golden 5-Pointed Star of Professional Verification -->
+  <polygon points="48,27 51.5,35 60.5,35 53.5,41 56,49.5 48,44 40,49.5 42.5,41 35.5,35 44.5,35" fill="url(#cert-head-gold)"/>
+
+  <!-- Sparkle Accents -->
+  <circle cx="26" cy="24" r="1.5" fill="#c084fc"/>
+  <circle cx="70" cy="24" r="1.5" fill="#fde047"/>
+</svg>

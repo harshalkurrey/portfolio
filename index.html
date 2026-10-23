@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshal Kurrey — Full Stack Developer & CS Student</title>
+    <meta name="description" content="Portfolio of Harshal Kurrey — B.Tech CSE student (8.98 CGPA), Full Stack Developer, and Open Source Contributor (Open Source India 2026 Admin, GSSoC, NSoC).">
+    <meta name="keywords" content="Harshal Kurrey, Full Stack Developer, B.Tech CSE, Open Source Contributor, Web Developer, Java, Python, JavaScript, Portfolio">
+    <meta name="author" content="Harshal Kurrey">
+
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Harshal Kurrey — Full Stack Developer & CS Student">
+    <meta property="og:description" content="Crafting scalable web applications and exploring open-source software. B.Tech CSE student with 8.98 CGPA.">
+    <meta property="og:url" content="https://harshalkurreydev.vercel.app/">
+    <meta name="theme-color" content="#090a0f">
+
+    <!-- Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons & Devicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Theme Initialization Script (Anti-Flash) -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('portfolio-theme');
+                if (savedTheme === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    document.documentElement.classList.add('dark-theme');
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    document.documentElement.classList.remove('dark-theme');
+                }
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+</head>
+<body>
+
+    <!-- ═══ TOAST NOTIFICATION CONTAINER ═══ -->
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+    <!-- ═══ TOP SCROLL PROGRESS BAR ═══ -->
+    <div class="scroll-progress-container" aria-hidden="true">
+        <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+    </div>
+
+    <!-- ═══ BACKGROUND AMBIENT GLOWS ═══ -->
+    <div class="ambient-glow glow-top" aria-hidden="true"></div>
+    <div class="ambient-glow glow-bottom" aria-hidden="true"></div>
+
+    <!-- ═══ FLOATING PILL NAVBAR ═══ -->
+    <header class="navbar-wrapper" id="navbar-wrapper">
+        <nav class="nav-pill" id="nav-pill" aria-label="Main Navigation">
+            <a href="#hero" class="brand-logo" aria-label="Harshal Kurrey Home">
+                <span class="logo-badge"><img src="assets/avatar.jpg" alt="Harshal Kurrey" class="logo-avatar-img"></span>
+                <span class="logo-title">harshal<span class="accent-dot">.dev</span></span>
+            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="#about" class="nav-item" data-section="about">About</a>
+                <a href="#skills" class="nav-item" data-section="skills">Skills</a>
+                <a href="#projects" class="nav-item" data-section="projects">Projects</a>
+                <a href="#experience" class="nav-item" data-section="experience">Journey</a>
+                <a href="#education" class="nav-item" data-section="education">Education</a>
+                <a href="#contact" class="nav-item" data-section="contact">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Night mode" title="Toggle Day/Night mode">
+                    <i class="fa-solid fa-sun sun-icon" aria-hidden="true"></i>
+                    <i class="fa-solid fa-moon moon-icon" aria-hidden="true"></i>
+                </button>
+                <button class="btn-copy-email" id="btn-quick-copy" title="Copy email address" aria-label="Copy email address">
+                    <i class="fa-regular fa-copy"></i>
+                    <span class="copy-text">Copy Email</span>
+                </button>
+                <a href="#contact" class="btn-nav-cta" aria-label="Let's Talk - Contact Me">
+                    <span>Let's Talk</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ═══ MOBILE DRAWER MENU ═══ -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+        <div class="drawer-backdrop" id="drawer-backdrop"></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <div class="brand-logo">
+                    <span class="logo-badge"><img src="assets/avatar.jpg" alt="Harshal Kurrey" class="logo-avatar-img"></span>
+                    <span class="logo-title">harshal<span class="accent-dot">.dev</span></span>
+                </div>
+                <div class="drawer-header-actions">
+                    <button class="theme-toggle-btn mobile-drawer-theme-toggle" id="drawer-theme-toggle" aria-label="Toggle Night mode" title="Toggle Day/Night mode">
+                        <i class="fa-solid fa-sun sun-icon" aria-hidden="true"></i>
+                        <i class="fa-solid fa-moon moon-icon" aria-hidden="true"></i>
+                    </button>
+                    <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close menu">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <nav class="drawer-links">
+                <a href="#hero" class="drawer-link">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#about" class="drawer-link">
+                    <i class="fa-solid fa-user"></i>
+                    <span>About Me</span>
+                </a>
+                <a href="#skills" class="drawer-link">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Tech Stack</span>
+                </a>
+                <a href="#projects" class="drawer-link">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <span>Featured Work</span>
+                </a>
+                <a href="#experience" class="drawer-link">
+                    <i class="fa-solid fa-code-branch"></i>
+                    <span>Experience & Open Source</span>
+                </a>
+                <a href="#education" class="drawer-link">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Education & Certs</span>
+                </a>
+                <a href="#contact" class="drawer-link">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Contact Me</span>
+                </a>
+            </nav>
+
+            <div class="drawer-footer">
+                <div class="drawer-status">
+                    <span class="live-status-dot"></span>
+                    <span>Open for Internships & Projects</span>
+                </div>
+                <div class="drawer-socials">
+                    <a href="https://github.com/harshalkurrey" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com/in/harshal-kurrey" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://leetcode.com/u/harshalkurrey/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode"><i class="fa-solid fa-code"></i></a>
+                    <a href="https://x.com/Harshalkurrey" target="_blank" rel="noopener noreferrer" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ MAIN CONTENT ═══ -->
+    <main id="main-content">
+
+        <!-- ═══ 01. HERO SECTION ═══ -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-left">
+                    <!-- Hero Author & Status Row -->
+                    <div class="hero-author-intro">
+                        <div class="hero-avatar-bubble">
+                            <img src="assets/avatar.jpg" alt="Harshal Kurrey" class="hero-avatar-photo">
+                            <span class="hero-avatar-pulse" title="Available for opportunities"></span>
+                        </div>
+                        <div class="status-pill">
+                            <span class="live-status-dot"></span>
+                            <span class="status-text">Available for Summer 2026 Internships</span>
+                            <span class="status-tag">B.Tech CSE</span>
+                        </div>
+                    </div>
+
+                    <!-- Main Hero Typography -->
+                    <h1 class="hero-heading">
+                        Hi, I'm <span class="highlight-text">Harshal Kurrey</span>.<br>
+                        <span class="typed-text-wrapper">
+                            Building <span id="hero-typewriter" class="typewriter-text"></span>
+                            <span class="typewriter-cursor">|</span>
+                        </span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Second-year Computer Science student at <strong>Rungta College of Engineering & Technology</strong> (8.98 CGPA) specializing in Full Stack Development. Active open-source contributor and project administrator turning complex software challenges into clean, accessible web solutions.
+                    </p>
+
+                    <!-- Hero CTA Buttons -->
+                    <div class="hero-cta-group">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>Explore Projects</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Get in Touch</span>
+                        </a>
+                        <button class="btn btn-ghost" id="hero-copy-email" title="Copy rahulkurrey321@gmail.com">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>Copy Email</span>
+                        </button>
+                    </div>
+
+                    <!-- Quick Verified Tags -->
+                    <div class="hero-meta-strip">
+                        <div class="meta-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Chhattisgarh, India</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fa-solid fa-code-fork"></i>
+                            <span>OSI 2026 Project Admin</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fa-solid fa-trophy"></i>
+                            <span>ICPC Ambassador 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right: Interactive Developer Card / Code Sandbox -->
+                <div class="hero-right">
+                    <div class="dev-card-wrapper" data-spotlight>
+                        <!-- Card Top Bar -->
+                        <div class="dev-card-header">
+                            <div class="mac-window-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="dev-card-tabs" role="tablist">
+                                <button class="tab-btn active" data-tab="config" role="tab" aria-selected="true">
+                                    <i class="fa-brands fa-js"></i> developer.ts
+                                </button>
+                                <button class="tab-btn" data-tab="profile" role="tab" aria-selected="false">
+                                    <i class="fa-solid fa-user-astronaut"></i> profile.view
+                                </button>
+                            </div>
+                            <div class="dev-card-lang">
+                                <span class="badge-ts">TS</span>
+                            </div>
+                        </div>
+
+                        <!-- Card Body: Code View -->
+                        <div class="dev-card-body" id="tab-config">
+                            <pre class="code-block"><code><span class="c-keyword">interface</span> <span class="c-type">DeveloperProfile</span> {
+  name: <span class="c-string">"Harshal Kurrey"</span>;
+  role: <span class="c-string">"Full Stack Developer"</span>;
+  degree: <span class="c-string">"B.Tech CSE (2025–2029)"</span>;
+  college: <span class="c-string">"Rungta College of Engg & Tech"</span>;
+  cgpa: <span class="c-number">8.98</span>;
+  coreStack: [<span class="c-string">"Java"</span>, <span class="c-string">"Python"</span>, <span class="c-string">"JavaScript"</span>, <span class="c-string">"MySQL"</span>];
+  openSource: {
+    program: <span class="c-string">"Open Source India 2026"</span>;
+    role: <span class="c-string">"Project Admin & Contributor"</span>;
+    activePrograms: [<span class="c-string">"GSSoC 2026"</span>, <span class="c-string">"NSoC 2026"</span>];
+  };
+  status: <span class="c-string">"Open for Internships"</span>;
+}
+
+<span class="c-keyword">export default</span> <span class="c-variable">HarshalKurrey</span>;</code></pre>
+                        </div>
+
+                        <!-- Card Body: Profile View (Tab 2) -->
+                        <div class="dev-card-body profile-view hidden" id="tab-profile">
+                            <div class="profile-preview-card">
+                                <div class="profile-avatar-wrap">
+                                    <img src="assets/avatar.jpg" alt="Harshal Kurrey" class="profile-avatar-img">
+                                    <span class="avatar-verified-badge" title="Verified Developer">
+                                        <i class="fa-solid fa-check"></i>
+                                    </span>
+                                </div>
+                                <div class="profile-details">
+                                    <h4 class="profile-name">Harshal Kurrey</h4>
+                                    <p class="profile-subtitle">Full Stack Developer & Open Source Admin</p>
+                                    <div class="profile-tags">
+                                        <span class="pill-chip">Java</span>
+                                        <span class="pill-chip">Python</span>
+                                        <span class="pill-chip">Full Stack</span>
+                                        <span class="pill-chip">DSA</span>
+                                    </div>
+                                    <div class="profile-quick-links">
+                                        <a href="https://github.com/harshalkurrey" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+                                        <a href="https://linkedin.com/in/harshal-kurrey" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                                        <a href="https://leetcode.com/u/harshalkurrey/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-code"></i> LeetCode</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Footer -->
+                        <div class="dev-card-footer">
+                            <div class="footer-left-status">
+                                <span class="git-branch"><i class="fa-solid fa-code-branch"></i> main</span>
+                                <span class="file-encoding">UTF-8</span>
+                            </div>
+                            <div class="footer-right-actions">
+                                <span class="quick-stat-badge">Ready for Hire</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Bar (Under Hero) -->
+            <div class="container hero-stats-container">
+                <div class="stats-grid">
+                    <div class="stat-box" data-spotlight>
+                        <div class="stat-value"><span class="counter" data-target="8.98" data-decimal="true">0</span></div>
+                        <div class="stat-title">Current CGPA</div>
+                        <div class="stat-sub">Rungta College (RCET)</div>
+                    </div>
+                    <div class="stat-box" data-spotlight>
+                        <div class="stat-value"><span class="counter" data-target="3">0</span><span class="accent-plus">+</span></div>
+                        <div class="stat-title">Open Source Programs</div>
+                        <div class="stat-sub">OSI, GSSoC & NSoC 2026</div>
+                    </div>
+                    <div class="stat-box" data-spotlight>
+                        <div class="stat-value"><span class="counter" data-target="5">0</span><span class="accent-plus">+</span></div>
+                        <div class="stat-title">Professional Certs</div>
+                        <div class="stat-sub">Tata, IBM, Google, DeepLearning</div>
+                    </div>
+                    <div class="stat-box" data-spotlight>
+                        <div class="stat-value"><span class="counter" data-target="6">0</span><span class="accent-plus">+</span></div>
+                        <div class="stat-title">Featured Projects</div>
+                        <div class="stat-sub">Full Stack & Web Apps</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ 02. ABOUT SECTION (BENTO GRID) ═══ -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-label-wrap">
+                    <span class="section-badge"><i class="fa-solid fa-user"></i> About Me</span>
+                    <h2 class="section-heading">Driven by Curiosity, <span class="text-gradient">Grounded in Fundamentals</span></h2>
+                    <p class="section-subheading">A snapshot of my background, academic dedication, and technical aspirations.</p>
+                </div>
+
+                <div class="about-bento-grid">
+                    <!-- Bento Box 1: Story & Core Narrative -->
+                    <div class="bento-box bento-story" data-spotlight>
+                        <div class="bento-author-spotlight">
+                            <div class="bento-avatar-frame">
+                                <img src="assets/avatar.jpg" alt="Harshal Kurrey" class="bento-avatar-photo">
+                                <span class="bento-verified-badge" title="Verified Full Stack Developer">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+                            </div>
+                            <div class="bento-author-meta">
+                                <div class="bento-icon-tag"><i class="fa-solid fa-compass"></i> Background & Vision</div>
+                                <h3 class="bento-title">Computer Science Undergraduate with a Passion for Full Stack Engineering</h3>
+                            </div>
+                        </div>
+                        <p class="bento-text">
+                            I am a second-year <strong>B.Tech CSE student specializing in Full Stack Development</strong> at Rungta College of Engineering & Technology, Bhilai. My work sits at the intersection of robust algorithmic logic (DSA) and polished, user-centered web interfaces.
+                        </p>
+                        <p class="bento-text">
+                            Beyond conventional coursework, I actively immerse myself in the global open-source ecosystem — contributing code, managing issues as a Project Admin for <em>Open Source India 2026</em> and <em>NSoC 2026</em>, and fostering developer communities as an ICPC Ambassador.
+                        </p>
+                        <div class="bento-highlights-row">
+                            <div class="highlight-chip">
+                                <i class="fa-solid fa-check-circle"></i> Problem Solving (DSA)
+                            </div>
+                            <div class="highlight-chip">
+                                <i class="fa-solid fa-check-circle"></i> Clean Architecture
+                            </div>
+                            <div class="highlight-chip">
+                                <i class="fa-solid fa-check-circle"></i> Open Source Collaboration
+                            </div>
+                            <div class="highlight-chip">
+                                <i class="fa-solid fa-check-circle"></i> Fast Learner
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bento Box 2: Academic Standing -->
+                    <div class="bento-box bento-academic" data-spotlight>
+                        <div class="bento-icon-tag"><i class="fa-solid fa-graduation-cap"></i> Academics</div>
+                        <div class="academic-score-display">
+                            <span class="score-number">8.98</span>
+                            <span class="score-scale">/ 10 CGPA</span>
+                        </div>
+                        <h4 class="academic-college">B.Tech in CSE (Full Stack)</h4>
+                        <p class="academic-uni">Rungta College of Engineering & Technology, Bhilai</p>
+                        <p class="academic-note">Rungta International Skills University (2025–2029)</p>
+                        <div class="academic-badge-wrap">
+                            <span class="badge-accent">Consistent Top Performer</span>
+                        </div>
+                    </div>
+
+                    <!-- Bento Box 3: Open Source Leadership -->
+                    <div class="bento-box bento-leadership" data-spotlight>
+                        <div class="bento-icon-tag"><i class="fa-solid fa-code-fork"></i> Community & Leadership</div>
+                        <div class="leadership-list">
+                            <div class="leadership-item">
+                                <div class="item-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                                <div>
+                                    <h5>Project Admin & Contributor</h5>
+                                    <p>Open Source India 2026 & NSoC 2026</p>
+                                </div>
+                            </div>
+                            <div class="leadership-item">
+                                <div class="item-icon"><i class="fa-solid fa-award"></i></div>
+                                <div>
+                                    <h5>ICPC 2026 Campus Ambassador</h5>
+                                    <p>Asia West Amritapuri Regional</p>
+                                </div>
+                            </div>
+                            <div class="leadership-item">
+                                <div class="item-icon"><i class="fa-solid fa-building-columns"></i></div>
+                                <div>
+                                    <h5>Cognizance 2026 Campus Ambassador</h5>
+                                    <p>IIT Roorkee Technical Festival</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bento Box 4: Current Focus -->
+                    <div class="bento-box bento-focus" data-spotlight>
+                        <div class="bento-icon-tag"><i class="fa-solid fa-bolt"></i> Currently Exploring</div>
+                        <div class="focus-stack-pills">
+                            <span class="focus-pill"><i class="devicon-java-plain"></i> Advanced Java & OOP</span>
+                            <span class="focus-pill"><i class="devicon-python-plain"></i> Python for Data & AI</span>
+                            <span class="focus-pill"><i class="devicon-mysql-plain"></i> Relational DBMS & SQL</span>
+                            <span class="focus-pill"><i class="fa-solid fa-sitemap"></i> DSA Optimization</span>
+                            <span class="focus-pill"><i class="devicon-javascript-plain"></i> Modern JS & Async APIs</span>
+                        </div>
+                        <div class="location-stamp">
+                            <i class="fa-solid fa-earth-asia"></i>
+                            <span>Based in Chhattisgarh, India • Open for Remote & Onsite</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ 03. SKILLS SECTION (INTERACTIVE MATRIX) ═══ -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-label-wrap">
+                    <span class="section-badge"><i class="fa-solid fa-layer-group"></i> Technical Arsenal</span>
+                    <h2 class="section-heading">Technologies I <span class="text-gradient">Build & Work With</span></h2>
+                    <p class="section-subheading">A comprehensive breakdown of programming languages, full stack tools, and core computer science capabilities.</p>
+                </div>
+
+                <!-- Skill Filter Tabs -->
+                <div class="skill-filters" role="group" aria-label="Skills Category Filter">
+                    <button class="skill-filter-btn active" data-filter="all" type="button">All Skills (22)</button>
+                    <button class="skill-filter-btn" data-filter="languages" type="button">Languages</button>
+                    <button class="skill-filter-btn" data-filter="web" type="button">Web & Frontend</button>
+                    <button class="skill-filter-btn" data-filter="core" type="button">Core CS & DB</button>
+                    <button class="skill-filter-btn" data-filter="tools" type="button">Tools & DevOps</button>
+                    <button class="skill-filter-btn" data-filter="design" type="button">Design & Extra</button>
+                </div>
+
+                <!-- Skills Grid Matrix -->
+                <div class="skills-matrix-grid" id="skills-grid">
+                    <!-- Java -->
+                    <div class="skill-item-card" data-category="languages" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="devicon-java-plain colored"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">Java</span>
+                            <span class="skill-level">OOP & DSA</span>
+                        </div>
+                        <span class="skill-badge-type">Core</span>
+                    </div>
+
+                    <!-- Python -->
+                    <div class="skill-item-card" data-category="languages" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="devicon-python-plain colored"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-level">Scripting & Data</span>
+                        </div>
+                        <span class="skill-badge-type">Proficient</span>
+                    </div>
+
+                    <!-- C -->
+                    <div class="skill-item-card" data-category="languages" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="devicon-c-plain colored"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">C</span>
+                            <span class="skill-level">Fundamentals & Memory</span>
+                        </div>
+                        <span class="skill-badge-type">Proficient</span>
+                    </div>
+
+                    <!-- C++ -->
+                    <div class="skill-item-card" data-category="languages" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="devicon-cplusplus-plain colored"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">C++</span>
+                            <span class="skill-level">STL & Problem Solving</span>
+                        </div>
+                        <span class="skill-badge-type">Proficient</span>
+                    </div>
+
+                    <!-- JavaScript -->
+                    <div class="skill-item-card" data-category="languages web" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="devicon-javascript-plain colored"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-level">ES6+, DOM, Async</span>
+                        </div>
+                        <span class="skill-badge-type">Core</span>
+                    </div>
+
+                    <!-- HTML5 -->
+                    <div class="skill-item-card" data-category="web" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="devicon-html5-plain colored"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">HTML5</span>
+                            <span class="skill-level">Semantic & Accessible</span>
+                        </div>
+                        <span class="skill-badge-type">Advanced</span>
+                    </div>
+
+                    <!-- CSS3 -->
+                    <div class="skill-item-card" data-category="web" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="devicon-css3-plain colored"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">CSS3</span>
+                            <span class="skill-level">Flexbox, Grid, Animations</span>
+                        </div>
+                        <span class="skill-badge-type">Advanced</span>
+                    </div>
+
+                    <!-- Responsive UI -->
+                    <div class="skill-item-card" data-category="web" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="fa-solid fa-mobile-screen"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">Responsive Design</span>
+                            <span class="skill-level">Mobile-First Layouts</span>
+                        </div>
+                        <span class="skill-badge-type">Standard</span>
+                    </div>
+
+                    <!-- DSA -->
+                    <div class="skill-item-card" data-category="core" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="fa-solid fa-sitemap"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">DSA</span>
+                            <span class="skill-level">Data Structures & Algos</span>
+                        </div>
+                        <span class="skill-badge-type">Active</span>
+                    </div>
+
+                    <!-- OOP -->
+                    <div class="skill-item-card" data-category="core" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="fa-solid fa-cubes"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">OOP Principles</span>
+                            <span class="skill-level">Inheritance, Polymorphism</span>
+                        </div>
+                        <span class="skill-badge-type">IBM Cert</span>
+                    </div>
+
+                    <!-- DBMS -->
+                    <div class="skill-item-card" data-category="core" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="fa-solid fa-database"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">DBMS</span>
+                            <span class="skill-level">Database Management</span>
+                        </div>
+                        <span class="skill-badge-type">Core</span>
+                    </div>
+
+                    <!-- MySQL -->
+                    <div class="skill-item-card" data-category="core" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="devicon-mysql-plain colored"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">MySQL</span>
+                            <span class="skill-level">Relational Modeling</span>
+                        </div>
+                        <span class="skill-badge-type">Proficient</span>
+                    </div>
+
+                    <!-- SQL -->
+                    <div class="skill-item-card" data-category="core" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="fa-solid fa-table"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">SQL Queries</span>
+                            <span class="skill-level">Joins, Subqueries, CRUD</span>
+                        </div>
+                        <span class="skill-badge-type">Proficient</span>
+                    </div>
+
+                    <!-- Git & GitHub -->
+                    <div class="skill-item-card" data-category="tools" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="devicon-github-original"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">Git & GitHub</span>
+                            <span class="skill-level">Version Control, PRs, CI</span>
+                        </div>
+                        <span class="skill-badge-type">Admin</span>
+                    </div>
+
+                    <!-- VS Code -->
+                    <div class="skill-item-card" data-category="tools" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="devicon-vscode-plain colored"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">VS Code</span>
+                            <span class="skill-level">Primary Environment</span>
+                        </div>
+                        <span class="skill-badge-type">Proficient</span>
+                    </div>
+
+                    <!-- Jupyter -->
+                    <div class="skill-item-card" data-category="tools" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="devicon-jupyter-plain colored"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">Jupyter Notebooks</span>
+                            <span class="skill-level">Python & Data Analysis</span>
+                        </div>
+                        <span class="skill-badge-type">Proficient</span>
+                    </div>
+
+                    <!-- Vercel & Netlify -->
+                    <div class="skill-item-card" data-category="tools" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">Cloud Hosting</span>
+                            <span class="skill-level">Vercel & Netlify Deploy</span>
+                        </div>
+                        <span class="skill-badge-type">Standard</span>
+                    </div>
+
+                    <!-- NumPy -->
+                    <div class="skill-item-card" data-category="tools" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="devicon-numpy-plain colored"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">NumPy</span>
+                            <span class="skill-level">Numerical Computation</span>
+                        </div>
+                        <span class="skill-badge-type">Learning</span>
+                    </div>
+
+                    <!-- Photoshop -->
+                    <div class="skill-item-card" data-category="design" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="devicon-photoshop-plain colored"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">Adobe Photoshop</span>
+                            <span class="skill-level">Graphic & Visual Assets</span>
+                        </div>
+                        <span class="skill-badge-type">Intern Verified</span>
+                    </div>
+
+                    <!-- Canva -->
+                    <div class="skill-item-card" data-category="design" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="devicon-canva-original colored"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">Canva Pro</span>
+                            <span class="skill-level">Branding & Social UI</span>
+                        </div>
+                        <span class="skill-badge-type">Proficient</span>
+                    </div>
+
+                    <!-- CorelDraw -->
+                    <div class="skill-item-card" data-category="design" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="fa-solid fa-bezier-curve"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">CorelDraw</span>
+                            <span class="skill-level">Vector Illustration</span>
+                        </div>
+                        <span class="skill-badge-type">DCA</span>
+                    </div>
+
+                    <!-- Tally Prime -->
+                    <div class="skill-item-card" data-category="design" data-spotlight>
+                        <div class="skill-icon-wrap"><i class="fa-solid fa-calculator"></i></div>
+                        <div class="skill-info">
+                            <span class="skill-name">Tally Prime</span>
+                            <span class="skill-level">Financial Accounting</span>
+                        </div>
+                        <span class="skill-badge-type">DCA</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ 04. PROJECTS SECTION ═══ -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-label-wrap">
+                    <span class="section-badge"><i class="fa-solid fa-laptop-code"></i> Featured Work</span>
+                    <h2 class="section-heading">Projects Built with <span class="text-gradient">Purpose & Precision</span></h2>
+                    <p class="section-subheading">Selected software and web projects highlighting full-stack engineering, performance, and real-world utility.</p>
+                </div>
+
+                <!-- Projects Filter -->
+                <div class="project-filters">
+                    <button class="project-filter-btn active" data-pfilter="all">All Projects (6)</button>
+                    <button class="project-filter-btn" data-pfilter="fullstack">Full Stack & Web (5)</button>
+                    <button class="project-filter-btn" data-pfilter="interactive">AI & 3D Interactive (2)</button>
+                    <button class="project-filter-btn" data-pfilter="opensource">Open Source (1)</button>
+                </div>
+
+                <!-- Projects Showcase Grid -->
+                <div class="projects-showcase-grid" id="projects-grid">
+
+                    <!-- Project 1: Campus Care (Flagship Featured) -->
+                    <article class="project-showcase-card featured" data-pcategory="fullstack" data-spotlight>
+                        <div class="project-card-header-bar">
+                            <div class="mac-window-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="project-url-preview">campuscare.live</span>
+                            <span class="project-type-badge flagship"><i class="fa-solid fa-star"></i> Flagship Full Stack</span>
+                        </div>
+
+                        <!-- Project Image Preview -->
+                        <div class="project-image-wrap">
+                            <img src="assets/projects/campuscare.jpg" alt="Campus Care System Interface Preview" class="project-card-img" loading="lazy">
+                            <div class="project-image-overlay">
+                                <a href="https://harshalkurrey.github.io/campuscare/" target="_blank" rel="noopener noreferrer" class="btn-preview-hover" aria-label="Explore Campus Care Live">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    <span>Explore Live</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card-content">
+                            <div class="project-meta-top">
+                                <span class="project-timeline">College Operations • 2026</span>
+                            </div>
+
+                            <h3 class="project-card-title">Campus Care — Student & Campus Management System</h3>
+
+                            <p class="project-card-desc">
+                                A comprehensive, web-based campus operations management platform built to centralize student records, monitor attendance trends, and streamline faculty communication with real-time alerts. Designed for performance, high accessibility, and seamless responsive usage on mobile and desktop.
+                            </p>
+
+                            <!-- Key Technical Features -->
+                            <div class="project-feature-list">
+                                <div class="feature-bullet"><i class="fa-solid fa-check"></i> Modular student profile and academic record management</div>
+                                <div class="feature-bullet"><i class="fa-solid fa-check"></i> Attendance tracking dashboard with actionable visual status</div>
+                                <div class="feature-bullet"><i class="fa-solid fa-check"></i> Clean, responsive UI optimized for low-latency devices</div>
+                            </div>
+
+                            <!-- Tech Stack Chips -->
+                            <div class="project-tech-chips">
+                                <span class="tech-chip"><i class="devicon-html5-plain"></i> HTML5</span>
+                                <span class="tech-chip"><i class="devicon-css3-plain"></i> CSS3</span>
+                                <span class="tech-chip"><i class="devicon-javascript-plain"></i> JavaScript ES6</span>
+                                <span class="tech-chip"><i class="devicon-github-original"></i> GitHub Pages</span>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="project-action-buttons">
+                                <a href="https://harshalkurrey.github.io/campuscare/" target="_blank" rel="noopener noreferrer" class="btn-project-primary">
+                                    <span>Live Preview</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                                <a href="https://github.com/harshalkurrey/campuscare" target="_blank" rel="noopener noreferrer" class="btn-project-ghost">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>Source Code</span>
+                                </a>
+                                <button class="btn-project-modal" data-project="campuscare" title="View detailed project breakdown">
+                                    <i class="fa-solid fa-circle-info"></i> Details
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Iron Man (3D Computer Vision & Particle System) -->
+                    <article class="project-showcase-card" data-pcategory="interactive fullstack" data-spotlight>
+                        <div class="project-card-header-bar">
+                            <div class="mac-window-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="project-url-preview">harshalkurrey.github.io/iron-man</span>
+                            <span class="project-type-badge interactive"><i class="fa-solid fa-hand-sparkles"></i> 3D Vision & AI</span>
+                        </div>
+
+                        <!-- Project Image Preview -->
+                        <div class="project-image-wrap">
+                            <img src="assets/projects/ironman.jpg" alt="Iron Man 3D Gesture Computer Vision Preview" class="project-card-img" loading="lazy">
+                            <div class="project-image-overlay">
+                                <a href="https://harshalkurrey.github.io/iron-man/" target="_blank" rel="noopener noreferrer" class="btn-preview-hover" aria-label="Launch Iron Man Experience">
+                                    <i class="fa-solid fa-hand-sparkles"></i>
+                                    <span>Launch Experience</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card-content">
+                            <div class="project-meta-top">
+                                <span class="project-timeline">Computer Vision & WebGL • 2026</span>
+                            </div>
+
+                            <h3 class="project-card-title">Iron Man — 3D Gesture Vision & Particle System</h3>
+
+                            <p class="project-card-desc">
+                                An interactive 3D WebGL experience leveraging Google MediaPipe for real-time camera hand gesture tracking, driving a 20,000+ physics particle simulation in Three.js with Unreal Bloom post-processing shaders and dynamic energy visual effects.
+                            </p>
+
+                            <div class="project-feature-list">
+                                <div class="feature-bullet"><i class="fa-solid fa-check"></i> Real-time hand landmark tracking powered by Google MediaPipe ML</div>
+                                <div class="feature-bullet"><i class="fa-solid fa-check"></i> High-performance 20,000-particle physics simulation at 60 FPS in Three.js</div>
+                                <div class="feature-bullet"><i class="fa-solid fa-check"></i> Unreal Bloom post-processing pipeline with interactive energy shaders</div>
+                            </div>
+
+                            <div class="project-tech-chips">
+                                <span class="tech-chip"><i class="devicon-threejs-original"></i> Three.js</span>
+                                <span class="tech-chip"><i class="fa-solid fa-camera"></i> MediaPipe Hands</span>
+                                <span class="tech-chip"><i class="fa-solid fa-cube"></i> WebGL Shaders</span>
+                                <span class="tech-chip"><i class="devicon-javascript-plain"></i> JavaScript ES6</span>
+                            </div>
+
+                            <div class="project-action-buttons">
+                                <a href="https://harshalkurrey.github.io/iron-man/" target="_blank" rel="noopener noreferrer" class="btn-project-primary">
+                                    <span>Live Preview</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                                <a href="https://github.com/harshalkurrey/iron-man" target="_blank" rel="noopener noreferrer" class="btn-project-ghost">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>Source Code</span>
+                                </a>
+                                <button class="btn-project-modal" data-project="ironman" title="View detailed project breakdown">
+                                    <i class="fa-solid fa-circle-info"></i> Details
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Societal Innovation Portal -->
+                    <article class="project-showcase-card" data-pcategory="fullstack" data-spotlight>
+                        <div class="project-card-header-bar">
+                            <div class="mac-window-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="project-url-preview">societal-innovation.vercel.app</span>
+                            <span class="project-type-badge production"><i class="fa-solid fa-lightbulb"></i> Full Stack Web</span>
+                        </div>
+
+                        <!-- Project Image Preview -->
+                        <div class="project-image-wrap">
+                            <img src="assets/projects/societal.jpg" alt="Societal Innovation Portal Platform Preview" class="project-card-img" loading="lazy">
+                            <div class="project-image-overlay">
+                                <a href="https://societal-innovation-portal-five.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-preview-hover" aria-label="Explore Societal Innovation Portal">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    <span>Explore Live</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card-content">
+                            <div class="project-meta-top">
+                                <span class="project-timeline">Community Innovation • 2026</span>
+                            </div>
+
+                            <h3 class="project-card-title">Societal Innovation Portal — Grassroots Problem Solving</h3>
+
+                            <p class="project-card-desc">
+                                A modern full-stack web portal empowering students, researchers, and community innovators to discover real-world societal problems, submit collaborative solutions, and manage project workflows with real-time data persistence.
+                            </p>
+
+                            <div class="project-feature-list">
+                                <div class="feature-bullet"><i class="fa-solid fa-check"></i> Supabase backend integration with authentication & secure policies</div>
+                                <div class="feature-bullet"><i class="fa-solid fa-check"></i> Vite + React + TypeScript with responsive modern Tailwind UI</div>
+                                <div class="feature-bullet"><i class="fa-solid fa-check"></i> Structured problem submission and category filtering flow</div>
+                            </div>
+
+                            <div class="project-tech-chips">
+                                <span class="tech-chip"><i class="devicon-typescript-plain"></i> TypeScript</span>
+                                <span class="tech-chip"><i class="devicon-react-original"></i> React</span>
+                                <span class="tech-chip"><i class="devicon-supabase-plain"></i> Supabase</span>
+                                <span class="tech-chip"><i class="devicon-tailwindcss-plain"></i> Tailwind CSS</span>
+                            </div>
+
+                            <div class="project-action-buttons">
+                                <a href="https://societal-innovation-portal-five.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-project-primary">
+                                    <span>Live Preview</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                                <a href="https://github.com/harshalkurrey/societal-innovation-portal" target="_blank" rel="noopener noreferrer" class="btn-project-ghost">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>Source Code</span>
+                                </a>
+                                <button class="btn-project-modal" data-project="societal" title="View detailed project breakdown">
+                                    <i class="fa-solid fa-circle-info"></i> Details
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: Harshal World -->
+                    <article class="project-showcase-card" data-pcategory="interactive fullstack" data-spotlight>
+                        <div class="project-card-header-bar">
+                            <div class="mac-window-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="project-url-preview">harshalworld.live</span>
+                            <span class="project-type-badge interactive"><i class="fa-solid fa-wand-magic-sparkles"></i> Interactive</span>
+                        </div>
+
+                        <!-- Project Image Preview -->
+                        <div class="project-image-wrap">
+                            <img src="assets/projects/harshalworld.jpg" alt="Harshal World Digital Universe Preview" class="project-card-img" loading="lazy">
+                            <div class="project-image-overlay">
+                                <a href="https://harshalkurrey.github.io/Harshal-World/" target="_blank" rel="noopener noreferrer" class="btn-preview-hover" aria-label="Explore Harshal World">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                    <span>Enter Universe</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card-content">
+                            <div class="project-meta-top">
+                                <span class="project-timeline">Interactive Experience • 2026</span>
+                            </div>
+
+                            <h3 class="project-card-title">Harshal World — Creative Digital Universe</h3>
+
+                            <p class="project-card-desc">
+                                A dynamic, interactive personal web space demonstrating creative frontend techniques, UI experiments, and responsive design systems. Features custom micro-interactions, smooth CSS transitions, and rich multimedia components.
+                            </p>
+
+                            <div class="project-feature-list">
+                                <div class="feature-bullet"><i class="fa-solid fa-check"></i> Engaging UI experiments with modern animations</div>
+                                <div class="feature-bullet"><i class="fa-solid fa-check"></i> Interactive modules showcasing component architecture</div>
+                                <div class="feature-bullet"><i class="fa-solid fa-check"></i> Fluid CSS keyframes and glassmorphic interface accents</div>
+                            </div>
+
+                            <div class="project-tech-chips">
+                                <span class="tech-chip"><i class="devicon-html5-plain"></i> HTML5</span>
+                                <span class="tech-chip"><i class="devicon-css3-plain"></i> CSS3</span>
+                                <span class="tech-chip"><i class="devicon-javascript-plain"></i> JavaScript</span>
+                            </div>
+
+                            <div class="project-action-buttons">
+                                <a href="https://harshalkurrey.github.io/Harshal-World/" target="_blank" rel="noopener noreferrer" class="btn-project-primary">
+                                    <span>Live Preview</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                                <a href="https://github.com/harshalkurrey/Harshal-World" target="_blank" rel="noopener noreferrer" class="btn-project-ghost">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>Source Code</span>
+                                </a>
+                                <button class="btn-project-modal" data-project="harshalworld">
+                                    <i class="fa-solid fa-circle-info"></i> Details
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 5: Aditya Computer Academy -->
+                    <article class="project-showcase-card" data-pcategory="fullstack" data-spotlight>
+                        <div class="project-card-header-bar">
+                            <div class="mac-window-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="project-url-preview">adityacomputeracademy.live</span>
+                            <span class="project-type-badge production"><i class="fa-solid fa-building"></i> Client & SEO</span>
+                        </div>
+
+                        <!-- Project Image Preview -->
+                        <div class="project-image-wrap">
+                            <img src="assets/projects/aditya.jpg" alt="Aditya Computer Academy Portal Preview" class="project-card-img" loading="lazy">
+                            <div class="project-image-overlay">
+                                <a href="https://harshalkurrey.github.io/adityacomputeracademy/" target="_blank" rel="noopener noreferrer" class="btn-preview-hover" aria-label="Visit Aditya Computer Academy Portal">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    <span>Visit Portal</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card-content">
+                            <div class="project-meta-top">
+                                <span class="project-timeline">Institutional Web • 2025</span>
+                            </div>
+
+                            <h3 class="project-card-title">Aditya Computer Academy — Institutional Portal</h3>
+
+                            <p class="project-card-desc">
+                                A production-ready institutional website engineered for a computer educational academy. Showcases course curricula, admissions details, faculty profiles, and direct contact inquiry channels with high Lighthouse scores and search engine optimization.
+                            </p>
+
+                            <div class="project-feature-list">
+                                <div class="feature-bullet"><i class="fa-solid fa-check"></i> Structured course directory with DCA/PGDCA details</div>
+                                <div class="feature-bullet"><i class="fa-solid fa-check"></i> Mobile-first architecture with rapid initial page load</div>
+                                <div class="feature-bullet"><i class="fa-solid fa-check"></i> Instant WhatsApp and phone inquiry links for admissions</div>
+                            </div>
+
+                            <div class="project-tech-chips">
+                                <span class="tech-chip"><i class="devicon-html5-plain"></i> HTML5</span>
+                                <span class="tech-chip"><i class="devicon-css3-plain"></i> CSS3</span>
+                                <span class="tech-chip"><i class="devicon-javascript-plain"></i> JavaScript</span>
+                                <span class="tech-chip"><i class="fa-solid fa-magnifying-glass"></i> SEO</span>
+                            </div>
+
+                            <div class="project-action-buttons">
+                                <a href="https://harshalkurrey.github.io/adityacomputeracademy/" target="_blank" rel="noopener noreferrer" class="btn-project-primary">
+                                    <span>Live Preview</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                                <a href="https://github.com/harshalkurrey/adityacomputeracademy" target="_blank" rel="noopener noreferrer" class="btn-project-ghost">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>Source Code</span>
+                                </a>
+                                <button class="btn-project-modal" data-project="aditya">
+                                    <i class="fa-solid fa-circle-info"></i> Details
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 6: Open Source Contributions Repository -->
+                    <article class="project-showcase-card" data-pcategory="opensource" data-spotlight>
+                        <div class="project-card-header-bar">
+                            <div class="mac-window-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="project-url-preview">github.com/harshalkurrey</span>
+                            <span class="project-type-badge opensource"><i class="fa-solid fa-code-branch"></i> Open Source</span>
+                        </div>
+
+                        <!-- Project Image Preview -->
+                        <div class="project-image-wrap">
+                            <img src="assets/projects/opensource.jpg" alt="Open Source Contributions & Repositories Dashboard Preview" class="project-card-img" loading="lazy">
+                            <div class="project-image-overlay">
+                                <a href="https://github.com/harshalkurrey" target="_blank" rel="noopener noreferrer" class="btn-preview-hover" aria-label="View Open Source Repositories">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>View GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card-content">
+                            <div class="project-meta-top">
+                                <span class="project-timeline">Active Initiatives • 2026</span>
+                            </div>
+
+                            <h3 class="project-card-title">Open Source Contributions & Repositories</h3>
+
+                            <p class="project-card-desc">
+                                Active collaborative contributions across major open-source programs: <em>Open Source India 2026</em> (Contributor + Project Admin), <em>GSSoC 2026</em>, and <em>NSoC 2026</em>. Resolved real-world issues, merged pull requests, and maintained community guidelines.
+                            </p>
+
+                            <div class="project-feature-list">
+                                <div class="feature-bullet"><i class="fa-solid fa-check"></i> Project Administration: PR reviews and issue triaging</div>
+                                <div class="feature-bullet"><i class="fa-solid fa-check"></i> Multi-repo participation across student developer programs</div>
+                                <div class="feature-bullet"><i class="fa-solid fa-check"></i> Mentoring new contributors on clean Git branching and commits</div>
+                            </div>
+
+                            <div class="project-tech-chips">
+                                <span class="tech-chip"><i class="devicon-git-plain"></i> Git Workflows</span>
+                                <span class="tech-chip"><i class="devicon-github-original"></i> GitHub Actions</span>
+                                <span class="tech-chip"><i class="fa-solid fa-users"></i> Community</span>
+                            </div>
+
+                            <div class="project-action-buttons">
+                                <a href="https://github.com/harshalkurrey" target="_blank" rel="noopener noreferrer" class="btn-project-primary">
+                                    <span>View GitHub Profile</span>
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                                <button class="btn-project-modal" data-project="opensource">
+                                    <i class="fa-solid fa-circle-info"></i> Details
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ 05. EXPERIENCE & OPEN SOURCE ROADMAP ═══ -->
+        <section id="experience" class="section experience-section">
+            <div class="container">
+                <div class="section-label-wrap">
+                    <span class="section-badge"><i class="fa-solid fa-timeline"></i> Career & Community</span>
+                    <h2 class="section-heading">Experience & <span class="text-gradient">Leadership Journey</span></h2>
+                    <p class="section-subheading">Verified professional roles, open source administration, internships, and ambassador initiatives.</p>
+                </div>
+
+                <div class="roadmap-timeline">
+
+                    <!-- Roadmap Item 1: Open Source India 2026 -->
+                    <div class="roadmap-item" data-spotlight>
+                        <div class="roadmap-dot">
+                            <i class="fa-solid fa-code-fork"></i>
+                        </div>
+                        <div class="roadmap-card">
+                            <div class="roadmap-header">
+                                <div class="roadmap-header-main">
+                                    <div class="roadmap-badge-thumb">
+                                        <img src="assets/experience/opensource_india.jpg" alt="Open Source India Logo" class="roadmap-badge-img" loading="lazy">
+                                    </div>
+                                    <div class="roadmap-header-text">
+                                        <span class="roadmap-period">Sep 2026 — Present</span>
+                                        <h3 class="roadmap-title">Open Source India 2026</h3>
+                                        <span class="roadmap-role">Contributor & Project Admin</span>
+                                    </div>
+                                </div>
+                                <span class="roadmap-tag tag-admin">Project Admin</span>
+                            </div>
+                            <p class="roadmap-desc">
+                                Appointed as both Contributor and Project Admin. Oversee repository issues, review incoming pull requests, guide newcomer contributors, and ensure code quality and documentation consistency across the organization.
+                            </p>
+                            <div class="roadmap-chips">
+                                <span>Git & GitHub</span>
+                                <span>PR Review</span>
+                                <span>Repository Administration</span>
+                                <span>Open Source Mentorship</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Roadmap Item 2: ICPC 2026 -->
+                    <div class="roadmap-item" data-spotlight>
+                        <div class="roadmap-dot">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <div class="roadmap-card">
+                            <div class="roadmap-header">
+                                <div class="roadmap-header-main">
+                                    <div class="roadmap-badge-thumb">
+                                        <img src="assets/experience/icpc.jpg" alt="ICPC Asia West Contest Logo" class="roadmap-badge-img" loading="lazy">
+                                    </div>
+                                    <div class="roadmap-header-text">
+                                        <span class="roadmap-period">Sep 2026 — Present</span>
+                                        <h3 class="roadmap-title">ICPC Asia West Amritapuri Regional 2026</h3>
+                                        <span class="roadmap-role">Institutional Ambassador</span>
+                                    </div>
+                                </div>
+                                <span class="roadmap-tag tag-ambassador">Ambassador</span>
+                            </div>
+                            <p class="roadmap-desc">
+                                Representing Rungta College of Engineering & Technology as Campus Ambassador for ICPC 2026, the world's most prestigious competitive programming contest. Driving participation, coordinating student teams, and sharing DSA contest resources.
+                            </p>
+                            <div class="roadmap-chips">
+                                <span>Competitive Programming</span>
+                                <span>Community Leadership</span>
+                                <span>DSA Engagement</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Roadmap Item 3: GSSoC 2026 -->
+                    <div class="roadmap-item" data-spotlight>
+                        <div class="roadmap-dot">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <div class="roadmap-card">
+                            <div class="roadmap-header">
+                                <div class="roadmap-header-main">
+                                    <div class="roadmap-badge-thumb">
+                                        <img src="assets/experience/gssoc.jpg" alt="GirlScript Summer of Code Logo" class="roadmap-badge-img" loading="lazy">
+                                    </div>
+                                    <div class="roadmap-header-text">
+                                        <span class="roadmap-period">2026</span>
+                                        <h3 class="roadmap-title">GirlScript Summer of Code (GSSoC 2026)</h3>
+                                        <span class="roadmap-role">Contributor & Campus Ambassador</span>
+                                    </div>
+                                </div>
+                                <span class="roadmap-tag tag-contributor">Open Source</span>
+                            </div>
+                            <p class="roadmap-desc">
+                                Actively contributed to open-source repositories by solving assigned issues, enhancing frontend UI layouts, and promoting coding inclusivity as a verified Campus Ambassador.
+                            </p>
+                            <div class="roadmap-chips">
+                                <span>Issue Resolution</span>
+                                <span>Frontend Enhancement</span>
+                                <span>Git Workflows</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Roadmap Item 4: NSoC 2026 -->
+                    <div class="roadmap-item" data-spotlight>
+                        <div class="roadmap-dot">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div class="roadmap-card">
+                            <div class="roadmap-header">
+                                <div class="roadmap-header-main">
+                                    <div class="roadmap-badge-thumb">
+                                        <img src="assets/experience/nsoc.jpg" alt="Nexus Spring of Code Logo" class="roadmap-badge-img" loading="lazy">
+                                    </div>
+                                    <div class="roadmap-header-text">
+                                        <span class="roadmap-period">Apr 2026 — Jun 2026</span>
+                                        <h3 class="roadmap-title">Nexus Spring of Code (NSoC 2026)</h3>
+                                        <span class="roadmap-role">Project Admin & Contributor</span>
+                                    </div>
+                                </div>
+                                <span class="roadmap-tag tag-admin">Project Admin</span>
+                            </div>
+                            <p class="roadmap-desc">
+                                Selected as Project Admin and Contributor. Spearheaded project activities, managed sprint milestones, and facilitated seamless collaboration across multi-contributor open source initiatives.
+                            </p>
+                            <div class="roadmap-chips">
+                                <span>Project Administration</span>
+                                <span>Workflow Automation</span>
+                                <span>Code Quality</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Roadmap Item 5: Cognizance 2026 IIT Roorkee -->
+                    <div class="roadmap-item" data-spotlight>
+                        <div class="roadmap-dot">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <div class="roadmap-card">
+                            <div class="roadmap-header">
+                                <div class="roadmap-header-main">
+                                    <div class="roadmap-badge-thumb">
+                                        <img src="assets/experience/iit_roorkee.jpg" alt="Cognizance IIT Roorkee Logo" class="roadmap-badge-img" loading="lazy">
+                                    </div>
+                                    <div class="roadmap-header-text">
+                                        <span class="roadmap-period">2026</span>
+                                        <h3 class="roadmap-title">Cognizance 2026 — IIT Roorkee</h3>
+                                        <span class="roadmap-role">Campus Ambassador</span>
+                                    </div>
+                                </div>
+                                <span class="roadmap-tag tag-ambassador">Ambassador</span>
+                            </div>
+                            <p class="roadmap-desc">
+                                Selected to represent IIT Roorkee's annual technical fest (one of Asia's largest). Coordinated campus outreach, promoted technical hackathons, and engaged fellow students in competitive technology events.
+                            </p>
+                            <div class="roadmap-chips">
+                                <span>Event Coordination</span>
+                                <span>Campus Outreach</span>
+                                <span>Public Speaking</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Roadmap Item 6: InAmigos Foundation -->
+                    <div class="roadmap-item" data-spotlight>
+                        <div class="roadmap-dot">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <div class="roadmap-card">
+                            <div class="roadmap-header">
+                                <div class="roadmap-header-main">
+                                    <div class="roadmap-badge-thumb">
+                                        <img src="assets/experience/inamigos.jpg" alt="InAmigos Foundation Logo" class="roadmap-badge-img" loading="lazy">
+                                    </div>
+                                    <div class="roadmap-header-text">
+                                        <span class="roadmap-period">Jan 2026 — Feb 2026</span>
+                                        <h3 class="roadmap-title">InAmigos Foundation</h3>
+                                        <span class="roadmap-role">Graphic Designing Intern</span>
+                                    </div>
+                                </div>
+                                <span class="roadmap-tag tag-intern">Internship</span>
+                            </div>
+                            <p class="roadmap-desc">
+                                Completed graphic design internship with a government-recognized NGO (ISO 9001:2015 certified). Designed visual communication assets, banners, and digital UI layouts for social initiatives.
+                            </p>
+                            <div class="roadmap-chips">
+                                <span>Adobe Photoshop</span>
+                                <span>UI Layouts</span>
+                                <span>Visual Branding</span>
+                                <span>ISO 9001:2015 Certified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ 06. EDUCATION & CERTIFICATIONS (BENTO COMBO) ═══ -->
+        <section id="education" class="section edu-cert-section">
+            <div class="container">
+                <div class="section-label-wrap">
+                    <span class="section-badge"><i class="fa-solid fa-certificate"></i> Verified Credentials</span>
+                    <h2 class="section-heading">Education & <span class="text-gradient">Professional Certifications</span></h2>
+                    <p class="section-subheading">Formal academic degrees alongside recognized technical certifications from Tata, IBM, Google, and DeepLearning.AI.</p>
+                </div>
+
+                <div class="edu-cert-dual-grid">
+
+                    <!-- Left Column: Education Pathway -->
+                    <div class="column-card" data-spotlight>
+                        <div class="column-header">
+                            <div class="header-icon-box">
+                                <img src="assets/education/academic_pathway.svg" alt="Academic Pathway Emblem" class="header-icon-img" loading="lazy">
+                            </div>
+                            <div>
+                                <h3 class="column-title">Academic Pathway</h3>
+                                <p class="column-subtitle">Formal degrees & foundational education</p>
+                            </div>
+                        </div>
+
+                        <div class="edu-items-stack">
+                            <!-- B.Tech -->
+                            <div class="edu-milestone">
+                                <div class="edu-badge-thumb">
+                                    <img src="assets/education/btech.svg" alt="B.Tech Computer Science & Engineering Degree" class="edu-badge-img" loading="lazy">
+                                </div>
+                                <div class="edu-body-content">
+                                    <div class="milestone-badge-year">2025 — 2029</div>
+                                    <div class="milestone-title-row">
+                                        <h4>B.Tech in Computer Science & Engineering</h4>
+                                        <span class="grade-pill high">8.98 CGPA</span>
+                                    </div>
+                                    <p class="milestone-sub">Specialization in Full Stack Development</p>
+                                    <p class="milestone-inst">Rungta College of Engineering & Technology, Bhilai</p>
+                                    <p class="milestone-meta">Affiliated with Rungta International Skills University</p>
+                                </div>
+                            </div>
+
+                            <!-- DCA -->
+                            <div class="edu-milestone">
+                                <div class="edu-badge-thumb">
+                                    <img src="assets/education/dca.svg" alt="Diploma in Computer Applications" class="edu-badge-img" loading="lazy">
+                                </div>
+                                <div class="edu-body-content">
+                                    <div class="milestone-badge-year">2025</div>
+                                    <div class="milestone-title-row">
+                                        <h4>Diploma in Computer Applications (DCA)</h4>
+                                        <span class="grade-pill">87.50%</span>
+                                    </div>
+                                    <p class="milestone-sub">Software Applications, Office Tools, Design & Tally</p>
+                                    <p class="milestone-inst">Aditya Computer Academy, Chhattisgarh</p>
+                                </div>
+                            </div>
+
+                            <!-- Class 12 -->
+                            <div class="edu-milestone">
+                                <div class="edu-badge-thumb">
+                                    <img src="assets/education/class12.svg" alt="Higher Secondary School Class XII" class="edu-badge-img" loading="lazy">
+                                </div>
+                                <div class="edu-body-content">
+                                    <div class="milestone-badge-year">2024</div>
+                                    <div class="milestone-title-row">
+                                        <h4>Higher Secondary School (Class XII)</h4>
+                                        <span class="grade-pill">65.40%</span>
+                                    </div>
+                                    <p class="milestone-inst">Swami Atmanand Govt. English Medium HSS, Balpur, CG</p>
+                                </div>
+                            </div>
+
+                            <!-- Class 10 -->
+                            <div class="edu-milestone">
+                                <div class="edu-badge-thumb">
+                                    <img src="assets/education/class10.svg" alt="Secondary School Certificate Class X" class="edu-badge-img" loading="lazy">
+                                </div>
+                                <div class="edu-body-content">
+                                    <div class="milestone-badge-year">2022</div>
+                                    <div class="milestone-title-row">
+                                        <h4>Secondary School Certificate (Class X)</h4>
+                                        <span class="grade-pill">82.40%</span>
+                                    </div>
+                                    <p class="milestone-inst">Govt. Higher Secondary School, Balpur, CG</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Certifications Showcase -->
+                    <div class="column-card" data-spotlight>
+                        <div class="column-header">
+                            <div class="header-icon-box">
+                                <img src="assets/certifications/industry_certifications.svg" alt="Industry Certifications Emblem" class="header-icon-img" loading="lazy">
+                            </div>
+                            <div>
+                                <h3 class="column-title">Industry Certifications</h3>
+                                <p class="column-subtitle">Specialized courses & job simulations</p>
+                            </div>
+                        </div>
+
+                        <div class="certs-items-stack">
+                            <!-- Cert 1: Tata GenAI -->
+                            <div class="cert-item-card">
+                                <div class="cert-badge-thumb">
+                                    <img src="assets/certifications/tata_genai.svg" alt="Tata GenAI Analytics Certification" class="cert-badge-img" loading="lazy">
+                                </div>
+                                <div class="cert-details">
+                                    <div class="cert-issuer-meta">
+                                        <span class="cert-issuer-name">Tata Group • Forage</span>
+                                        <span class="cert-badge-sim">Job Simulation</span>
+                                    </div>
+                                    <h4 class="cert-course-name">GenAI Powered Data Analytics</h4>
+                                    <p class="cert-desc">Explored Generative AI integration in enterprise data analytics workflows, structured querying, and executive reporting.</p>
+                                </div>
+                            </div>
+
+                            <!-- Cert 2: IBM Java OOP -->
+                            <div class="cert-item-card">
+                                <div class="cert-badge-thumb">
+                                    <img src="assets/certifications/ibm_java.svg" alt="IBM Object-Oriented Programming with Java" class="cert-badge-img" loading="lazy">
+                                </div>
+                                <div class="cert-details">
+                                    <div class="cert-issuer-meta">
+                                        <span class="cert-issuer-name">IBM</span>
+                                        <span class="cert-badge-sim">Course Verified</span>
+                                    </div>
+                                    <h4 class="cert-course-name">Object-Oriented Programming with Java</h4>
+                                    <p class="cert-desc">Deep-dive into class hierarchies, encapsulation, polymorphism, inheritance, and clean OOP architecture in Java.</p>
+                                </div>
+                            </div>
+
+                            <!-- Cert 3: Google AI -->
+                            <div class="cert-item-card">
+                                <div class="cert-badge-thumb">
+                                    <img src="assets/certifications/google_ai.svg" alt="Google Introduction to Artificial Intelligence" class="cert-badge-img" loading="lazy">
+                                </div>
+                                <div class="cert-details">
+                                    <div class="cert-issuer-meta">
+                                        <span class="cert-issuer-name">Google</span>
+                                        <span class="cert-badge-sim">Course Verified</span>
+                                    </div>
+                                    <h4 class="cert-course-name">Introduction to Artificial Intelligence</h4>
+                                    <p class="cert-desc">Comprehensive foundations of AI algorithms, neural networks, machine learning paradigms, and ethical AI development.</p>
+                                </div>
+                            </div>
+
+                            <!-- Cert 4: IBM Web Dev -->
+                            <div class="cert-item-card">
+                                <div class="cert-badge-thumb">
+                                    <img src="assets/certifications/ibm_webdev.svg" alt="IBM HTML, CSS & JavaScript Web Development" class="cert-badge-img" loading="lazy">
+                                </div>
+                                <div class="cert-details">
+                                    <div class="cert-issuer-meta">
+                                        <span class="cert-issuer-name">IBM</span>
+                                        <span class="cert-badge-sim">Course Verified</span>
+                                    </div>
+                                    <h4 class="cert-course-name">HTML, CSS & JavaScript Web Development</h4>
+                                    <p class="cert-desc">Modern frontend development standards, DOM manipulation, responsive layouts, and cross-browser scripting.</p>
+                                </div>
+                            </div>
+
+                            <!-- Cert 5: DeepLearning.AI Calculus -->
+                            <div class="cert-item-card">
+                                <div class="cert-badge-thumb">
+                                    <img src="assets/certifications/deeplearning_calc.svg" alt="DeepLearning.AI Calculus for Machine Learning" class="cert-badge-img" loading="lazy">
+                                </div>
+                                <div class="cert-details">
+                                    <div class="cert-issuer-meta">
+                                        <span class="cert-issuer-name">DeepLearning.AI</span>
+                                        <span class="cert-badge-sim">Specialization</span>
+                                    </div>
+                                    <h4 class="cert-course-name">Calculus for Machine Learning</h4>
+                                    <p class="cert-desc">Multivariate calculus, gradients, derivatives, and mathematical foundations powering deep learning optimization.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ 07. CONTACT & INVITATION SECTION ═══ -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="contact-bento-container" data-spotlight>
+                    <div class="contact-left">
+                        <span class="section-badge"><i class="fa-solid fa-paper-plane"></i> Let's Collaborate</span>
+                        <h2 class="contact-heading">Have an Opportunity or Project? <span class="text-gradient">Let's Connect.</span></h2>
+                        <p class="contact-text">
+                            I am actively seeking <strong>Summer 2026 software engineering internships</strong>, full-stack development roles, and open-source collaborations. Whether you have an opportunity or just want to discuss tech, I'd love to hear from you.
+                        </p>
+
+                        <!-- Direct Contact List -->
+                        <div class="contact-methods-list">
+                            <div class="contact-item">
+                                <div class="method-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="method-content">
+                                    <span class="method-label">Direct Email</span>
+                                    <a href="mailto:rahulkurrey321@gmail.com" class="method-value">rahulkurrey321@gmail.com</a>
+                                </div>
+                                <button class="btn-item-copy" id="copy-email-btn" title="Copy email address" aria-label="Copy email">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="method-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div class="method-content">
+                                    <span class="method-label">Direct Phone / WhatsApp</span>
+                                    <a href="tel:+916268310161" class="method-value">+91 62683 10161</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="method-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="method-content">
+                                    <span class="method-label">Current Location</span>
+                                    <span class="method-value">Bhilai / Balpur, Chhattisgarh, India</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Network Icons -->
+                        <div class="social-channels-bar">
+                            <span class="social-label">Find me on:</span>
+                            <div class="social-icons-group">
+                                <a href="https://github.com/harshalkurrey" target="_blank" rel="noopener noreferrer" class="social-link-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://linkedin.com/in/harshal-kurrey" target="_blank" rel="noopener noreferrer" class="social-link-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="https://leetcode.com/u/harshalkurrey/" target="_blank" rel="noopener noreferrer" class="social-link-btn" aria-label="LeetCode"><i class="fa-solid fa-code"></i></a>
+                                <a href="https://x.com/Harshalkurrey" target="_blank" rel="noopener noreferrer" class="social-link-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                                <a href="https://www.instagram.com/harshal.kurrey" target="_blank" rel="noopener noreferrer" class="social-link-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Contact Form -->
+                    <div class="contact-right">
+                        <div class="contact-form-box">
+                            <h3 class="form-title">Send a Direct Message</h3>
+                            <p class="form-sub">Fill out the details below and I'll respond within 24 hours.</p>
+
+                            <form class="interactive-form" id="contact-form" novalidate>
+                                <div class="input-field-group">
+                                    <label for="form-name">Full Name <span class="required">*</span></label>
+                                    <div class="input-wrapper">
+                                        <i class="fa-solid fa-user input-icon"></i>
+                                        <input type="text" id="form-name" name="name" placeholder="John Doe" required autocomplete="name">
+                                    </div>
+                                </div>
+
+                                <div class="input-field-group">
+                                    <label for="form-email">Email Address <span class="required">*</span></label>
+                                    <div class="input-wrapper">
+                                        <i class="fa-solid fa-envelope input-icon"></i>
+                                        <input type="email" id="form-email" name="email" placeholder="john@example.com" required autocomplete="email">
+                                    </div>
+                                </div>
+
+                                <div class="input-field-group">
+                                    <label for="form-subject">Subject</label>
+                                    <div class="input-wrapper">
+                                        <i class="fa-solid fa-tag input-icon"></i>
+                                        <input type="text" id="form-subject" name="subject" placeholder="Internship Opportunity / Project Inquiry">
+                                    </div>
+                                </div>
+
+                                <div class="input-field-group">
+                                    <label for="form-message">Message <span class="required">*</span></label>
+                                    <div class="input-wrapper textarea-wrapper">
+                                        <textarea id="form-message" name="message" rows="4" placeholder="Hello Harshal, I'd like to discuss..." required></textarea>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-submit-full" id="form-submit-btn">
+                                    <span>Send Message</span>
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══ MODAL: PROJECT DETAILS BREAKDOWN ═══ -->
+    <div class="modal-backdrop" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-dialog">
+            <div class="modal-card">
+                <button class="modal-close-btn" id="modal-close-btn" aria-label="Close project details">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="modal-body" id="modal-body-content">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-top-row">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <span class="logo-badge"><img src="assets/avatar.jpg" alt="Harshal Kurrey" class="logo-avatar-img"></span>
+                        <span class="logo-title">harshal<span class="accent-dot">.dev</span></span>
+                    </div>
+                    <p class="footer-tagline">
+                        Full Stack Developer & Open Source Enthusiast. Passionate about algorithms, robust software, and continuous learning.
+                    </p>
+                </div>
+
+                <div class="footer-nav-col">
+                    <span class="footer-heading">Navigation</span>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#experience">Journey</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-connect-col">
+                    <span class="footer-heading">Connect</span>
+                    <div class="footer-social-row">
+                        <a href="https://github.com/harshalkurrey" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://linkedin.com/in/harshal-kurrey" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://leetcode.com/u/harshalkurrey/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode"><i class="fa-solid fa-code"></i></a>
+                        <a href="https://x.com/Harshalkurrey" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/harshal.kurrey" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    <div class="footer-email-box">
+                        <span class="email-text">rahulkurrey321@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom-row">
+                <p class="copyright-text">
+                    &copy; 2026 <strong>Harshal Kurrey</strong>. Designed & engineered with clean code and modern aesthetics.
+                </p>
+                <div class="footer-status-pill">
+                    <span class="live-status-dot"></span>
+                    <span>All Systems Operational</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══ BACK TO TOP FLOATING BUTTON ═══ -->
+    <button class="back-to-top-btn" id="back-to-top" aria-label="Back to top of page" title="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

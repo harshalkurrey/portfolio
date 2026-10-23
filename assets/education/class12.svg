@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <defs>
+    <linearGradient id="c12-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </linearGradient>
+    <linearGradient id="c12-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="c12-emerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6ee7b7"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <linearGradient id="c12-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Container Squircle -->
+  <rect x="2" y="2" width="92" height="92" rx="20" fill="url(#c12-bg)" stroke="url(#c12-border)" stroke-width="2"/>
+
+  <!-- Science Orbital Ring -->
+  <ellipse cx="48" cy="38" rx="32" ry="12" fill="none" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1.5" transform="rotate(-25 48 38)"/>
+  <ellipse cx="48" cy="38" rx="32" ry="12" fill="none" stroke="rgba(6, 182, 212, 0.3)" stroke-width="1.5" transform="rotate(25 48 38)"/>
+  <circle cx="28" cy="28" r="2" fill="#6ee7b7"/>
+  <circle cx="68" cy="48" r="2" fill="#38bdf8"/>
+
+  <!-- Open Knowledge Book -->
+  <g>
+    <!-- Left Page -->
+    <path d="M48 46 C40 38 28 39 20 42 L20 60 C28 57 40 56 48 64 Z" fill="#042f2e" stroke="url(#c12-emerald)" stroke-width="2"/>
+    <!-- Right Page -->
+    <path d="M48 46 C56 38 68 39 76 42 L76 60 C68 57 56 56 48 64 Z" fill="#042f2e" stroke="url(#c12-emerald)" stroke-width="2"/>
+    <!-- Book Spine -->
+    <line x1="48" y1="46" x2="48" y2="64" stroke="url(#c12-gold)" stroke-width="2"/>
+    <!-- Page Lines Left -->
+    <line x1="26" y1="47" x2="42" y2="44" stroke="rgba(110, 231, 183, 0.5)" stroke-width="1.5"/>
+    <line x1="26" y1="52" x2="40" y2="49" stroke="rgba(110, 231, 183, 0.5)" stroke-width="1.5"/>
+    <!-- Page Lines Right -->
+    <line x1="54" y1="44" x2="70" y2="47" stroke="rgba(110, 231, 183, 0.5)" stroke-width="1.5"/>
+    <line x1="56" y1="49" x2="70" y2="52" stroke="rgba(110, 231, 183, 0.5)" stroke-width="1.5"/>
+  </g>
+
+  <!-- Radiant Torch / Flame of Wisdom above Book -->
+  <path d="M48 24 C44 30 45 35 48 38 C51 35 52 30 48 24 Z" fill="url(#c12-gold)"/>
+
+  <!-- Class XII Pill -->
+  <rect x="25" y="70" width="46" height="15" rx="7.5" fill="rgba(16, 185, 129, 0.18)" stroke="rgba(16, 185, 129, 0.4)" stroke-width="1"/>
+  <text x="48" y="81" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#a7f3d0" text-anchor="middle" letter-spacing="1">CLASS XII</text>
+</svg>

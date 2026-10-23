@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <defs>
+    <linearGradient id="ggl-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="ggl-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4285f4"/>
+      <stop offset="33%" stop-color="#ea4335"/>
+      <stop offset="66%" stop-color="#fbbc05"/>
+      <stop offset="100%" stop-color="#34a853"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Container Squircle -->
+  <rect x="2" y="2" width="92" height="92" rx="20" fill="url(#ggl-bg)" stroke="url(#ggl-border)" stroke-width="2"/>
+
+  <!-- Google "G" in Center -->
+  <path d="M48 24 C57 24 63.5 27.5 67 31 L60 38 C57 35.5 53 33 48 33 C39 33 32 40 32 49 C32 58 39 65 48 65 C55 65 59 61 61 56 L48 56 L48 48 L71 48 C71.5 50 72 52 72 55 C72 65 64 73 48 73 C34 73 23 62 23 49 C23 35 34 24 48 24 Z" fill="none" opacity="0"/>
+
+  <!-- Neural AI Network Synapses with Google 4-Color Nodes -->
+  <!-- Synapse Lines -->
+  <line x1="32" y1="36" x2="48" y2="28" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1.8"/>
+  <line x1="64" y1="36" x2="48" y2="28" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1.8"/>
+  <line x1="32" y1="36" x2="48" y2="48" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1.8"/>
+  <line x1="64" y1="36" x2="48" y2="48" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1.8"/>
+  <line x1="32" y1="60" x2="48" y2="48" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1.8"/>
+  <line x1="64" y1="60" x2="48" y2="48" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1.8"/>
+  <line x1="32" y1="36" x2="32" y2="60" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5"/>
+  <line x1="64" y1="36" x2="64" y2="60" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5"/>
+
+  <!-- Nodes in Google Signature Colors -->
+  <!-- Center Core AI Node -->
+  <circle cx="48" cy="48" r="7" fill="#ffffff"/>
+  <circle cx="48" cy="48" r="4.5" fill="#4285f4"/>
+
+  <!-- Google Blue Node -->
+  <circle cx="48" cy="28" r="5.5" fill="#4285f4"/>
+  <circle cx="48" cy="28" r="2.5" fill="#ffffff"/>
+
+  <!-- Google Red Node -->
+  <circle cx="64" cy="36" r="5.5" fill="#ea4335"/>
+  <circle cx="64" cy="36" r="2.5" fill="#ffffff"/>
+
+  <!-- Google Yellow Node -->
+  <circle cx="64" cy="60" r="5.5" fill="#fbbc05"/>
+  <circle cx="64" cy="60" r="2.5" fill="#ffffff"/>
+
+  <!-- Google Green Node -->
+  <circle cx="32" cy="60" r="5.5" fill="#34a853"/>
+  <circle cx="32" cy="60" r="2.5" fill="#ffffff"/>
+
+  <!-- Google Blue Left Node -->
+  <circle cx="32" cy="36" r="5.5" fill="#4285f4"/>
+  <circle cx="32" cy="36" r="2.5" fill="#ffffff"/>
+
+  <!-- Pill Tag at bottom -->
+  <rect x="20" y="72" width="56" height="15" rx="7.5" fill="rgba(255, 255, 255, 0.08)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1"/>
+  <text x="48" y="83" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="1">GOOGLE • AI</text>
+</svg>

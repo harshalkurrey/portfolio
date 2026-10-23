@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <defs>
+    <linearGradient id="acad-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="acad-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="acad-cap" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a5b4fc"/>
+      <stop offset="50%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4338ca"/>
+    </linearGradient>
+    <linearGradient id="acad-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="acad-laurel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Container Squircle -->
+  <rect x="2" y="2" width="92" height="92" rx="20" fill="url(#acad-bg)" stroke="url(#acad-border)" stroke-width="2"/>
+
+  <!-- Subtle Ambient Glow -->
+  <circle cx="48" cy="42" r="26" fill="#6366f1" opacity="0.18"/>
+
+  <!-- Academic Graduation Cap (Mortarboard) -->
+  <!-- Skull Cap under diamond -->
+  <path d="M30 42 L30 52 C30 60 66 60 66 52 L66 42" fill="none" stroke="url(#acad-cap)" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Top Diamond Surface -->
+  <path d="M48 24 L76 37 L48 50 L20 37 Z" fill="url(#acad-cap)"/>
+  <path d="M48 26 L73 37 L48 48 L23 37 Z" fill="#1e1b4b" opacity="0.3"/>
+
+  <!-- Cap Center Button & Golden Tassel -->
+  <circle cx="48" cy="37" r="3" fill="url(#acad-gold)"/>
+  <path d="M48 37 L67 42 L69 57" fill="none" stroke="url(#acad-gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Tassel Brush -->
+  <path d="M66 57 L72 57 L69 64 Z" fill="url(#acad-gold)"/>
+
+  <!-- Laurel Wreath of Academic Achievement -->
+  <!-- Left Laurel Branch -->
+  <path d="M24 66 C22 56 26 48 30 44" fill="none" stroke="url(#acad-laurel)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="23" cy="62" r="2" fill="url(#acad-laurel)"/>
+  <circle cx="23" cy="54" r="2" fill="url(#acad-laurel)"/>
+  <circle cx="26" cy="47" r="2" fill="url(#acad-laurel)"/>
+
+  <!-- Right Laurel Branch -->
+  <path d="M72 66 C74 56 70 48 66 44" fill="none" stroke="url(#acad-laurel)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="73" cy="62" r="2" fill="url(#acad-laurel)"/>
+  <circle cx="73" cy="54" r="2" fill="url(#acad-laurel)"/>
+  <circle cx="70" cy="47" r="2" fill="url(#acad-laurel)"/>
+
+  <!-- Base Stars / Laurel Ribbon Knot -->
+  <polygon points="48,68 50,72 54,72 51,75 52,79 48,76 44,79 45,75 42,72 46,72" fill="url(#acad-gold)"/>
+</svg>
